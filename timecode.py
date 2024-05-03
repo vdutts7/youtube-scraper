@@ -28,4 +28,15 @@ response = openai.ChatCompletion.create(
 )
 timecode = response["choices"][0]["message"]["content"]
 
-print(timecode)
+# Create output directory if it doesn't exist
+output_dir = "output"
+os.makedirs(output_dir, exist_ok=True)
+
+# Replace print statements with file writing
+output_file = os.path.join(output_dir, "timecode_output.txt")
+with open(output_file, "w") as f:
+    f.write(f"URL: {url}\n")
+    f.write(f"Video ID: {video_id}\n")
+    f.write(f"Timecode:\n{timecode}\n")
+
+print(f"Output written to {output_file}")
