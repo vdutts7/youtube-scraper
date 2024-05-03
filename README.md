@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png?20220706172052" alt="Logo" >
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png?20220706172052" alt="Logo" width="120" height="80">
     <img src="https://res.cloudinary.com/dnz16usmk/image/upload/v1702058645/vd7-website/openai-logo.png" alt="Logo" width="67" height="67">
   </a>
   
