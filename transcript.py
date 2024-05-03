@@ -1,7 +1,17 @@
 import os
+from dotenv import load_dotenv
 from youtube_transcript_api import YouTubeTranscriptApi
 
-url = 'https://www.youtube.com/watch?v=vEd-LqBCONg'
+# Load environment variables
+load_dotenv()
+
+# Get the URL from the environment variable
+url = os.getenv('YOUTUBE_URL')
+
+if not url:
+    print("Error: YOUTUBE_URL environment variable is not set.")
+    exit(1)
+
 video_id = url.replace('https://www.youtube.com/watch?v=', '')
 
 transcript = YouTubeTranscriptApi.get_transcript(video_id)
