@@ -6,10 +6,10 @@ from dotenv import load_dotenv
 # Load environment variables from .env file
 load_dotenv()
 
-# Get API key from environment variable
+# Get API key and YouTube URL from environment variables
 openai.api_key = os.getenv('OPENAI_API_KEY')
+url = os.getenv('YOUTUBE_URL')
 
-url = 'https://www.youtube.com/watch?v=UCGaKvZpJYc'
 print(url)
 
 video_id = url.replace('https://www.youtube.com/watch?v=', '')
@@ -18,7 +18,7 @@ print(video_id)
 transcript = YouTubeTranscriptApi.get_transcript(video_id)
 
 response = openai.ChatCompletion.create(
-  model="gpt-3.5-turbo-16k",
+  model="gpt-4o",
   messages=[
     {"role": "system", "content": "You are a database computer"},
     {"role": "assistant", "content": "data is stored in JSON {text:'', start:'', duration:''}"},
