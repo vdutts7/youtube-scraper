@@ -1,0 +1,2 @@
+openai
+youtube-transcript-api
